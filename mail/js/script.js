@@ -13,12 +13,10 @@
 1. Dai la possibilità all'utente di inserire la propria email
 2. Crea una lista con tutte le mail da confrontare 
 3. Confronta l'email utente con tutti gli elementi della lista ( ciclo for )
-4. Scrivi un testo che conferma l'esito
+4. Crea un elemento html in js 
+5. Stampa un testo che conferma l'esito dentro l'elemento creato
 */
 
-
-// 1. 
-const userEmail = prompt('Scrivi la tua e-mail:');
 
 // 2.
 const emailList = [
@@ -31,16 +29,43 @@ const emailList = [
   'AlessandroCingolani@gmail.com',
 ];
 
+
+// 1. 
+const userEmail = prompt('Scrivi la tua e-mail:');
+// const userEmail = 'MassimoAzzini@gmail.com';
+
+// 4.
+const section = document.querySelector('section');
+const h1 = document.createElement('h1');
+
+const error = 'error';
+
+
+let emailValidation = false;
+
 // 3.
 for ( let i = 0; i < emailList.length; i++ ) {
-
-  console.log(emailList[i]);
   
-}
+  let message;
+  
+  if ( userEmail !== emailList[i] ) {
+    message = emailList[i];
+
+    console.log(error)
+    
+    // emailValidation = true
+  } 
+  
+  // console.log(emailValidation)
+  
+  // console.log(message)    
+  // h1.append(message);
 
 
-if ( userEmail === emailList[0] ) {
- console.log('ok');
-} else {
-  console.log('error');
 }
+
+// if ( emailValidation = false ) {
+//   console.log('error')
+// }
+
+
